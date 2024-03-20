@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop-Down</title>
+</head>
+
+<body>
+    <script>
+        // Use dynamic import to load the JavaScript bundle asynchronously
+        import('./bundle.js')
+            .then(module => {
+                // Module loaded successfully
+                console.log('Bundle loaded:', module);
+            })
+            .catch(error => {
+                // Error occurred while loading the module
+                console.error('Error loading bundle:', error);
+            });
+    </script>
+
+</body>
+
+</html>
