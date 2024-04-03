@@ -8,6 +8,28 @@
 </head>
 
 <body>
+
+    <nav class="pages">
+        <ul id="nav">
+            <li>
+                <button class="navButton">Colors</button>
+            </li>
+            <li><button class="navButton">News</button></li>
+            <li><button class="navButton">Contact</button></li>
+            <li>
+
+                <button id="buttonEl" class="navButton Dropdown">Dropdown</button>
+
+                <div id="buttonColors" class="dropOptions">
+                    <button>dark</button>
+                    <button>green</button>
+                    <button>blue</button>
+                </div>
+            <li><button class="navButton"> news</button></li>
+
+        </ul>
+    </nav>
+
     <script>
         // Use dynamic import to load the JavaScript bundle asynchronously
         import('./bundle.js')
@@ -20,28 +42,6 @@
                 console.error('Error loading bundle:', error);
             });
     </script>
-    <nav class="pages">
-        <ul id="nav">
-            <li>
-                <a class="navButton" href="#home">Home</a>
-            </li>
-            <li><a href="#news" class="navButton">News</a></li>
-            <li><a href="#contact" class="navButton">Contact</a></li>
-            <li>
-
-                <button class="navButton Dropdown">Dropdown</button>
-
-                <div class="dropOptions">
-                    <button>dark</button>
-                    <button>green</button>
-                    <button>blue</button>
-                </div>
-                <!-- <li><a href="#news" class="navButton">News</a></li>
-            </li> -->
-        </ul>
-    </nav>
-
-
 
 </body>
 

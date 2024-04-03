@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-    background-color: rgba(255, 250, 240, 0.795);
+    background-color: rgba(133, 248, 250, 0.795);
     border: #00060400 2px solid;
 }
 
@@ -26,17 +26,7 @@ li a {
 }
 
 
-.navButton:hover:not(.active) {
-    background-color: #04AA6D;
-    /* Green */
-    color: white;
-}
 
-
-
-.active {
-    background-color: #04AA6D;
-}
 
 
 
@@ -80,11 +70,27 @@ li {
     text-decoration: none;
 
     padding: 10px 30px;
-    background-color: aliceblue;
+    background-color: rgb(226, 188, 53);
     border: none;
     display: inline-block;
     font-size: 16px;
     margin: 14px 2px;
     font-family: 'Times New Roman', Times, serif;
     color: #551A8B;
+}
+
+.hideElement {
+    display: none;
+}
+
+.navButton:hover {
+    background-color: #0faa04;
+    /* Green */
+    color: rgb(225, 232, 26);
+}
+
+
+
+.navButton:active {
+    background-color: #3f524b;
 }
