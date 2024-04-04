@@ -7,63 +7,34 @@ body {
 nav {
     background-color: rgba(133, 248, 250, 0.795);
     border: #00060400 2px solid;
-}
-
-#nav {
     text-align: center;
-    /* overflow: hidden; */
-}
-
-#nav li {
-    display: inline;
 
 }
 
 
-
-li a {
-    text-decoration: none;
-}
-
-
-
-
-
-
-li {
-    position: relative;
+.inlineEl {
     display: inline-block;
-    margin-right: 20px;
+    padding: 0;
+}
+
+#buttonEl {
+    margin: 0;
 }
 
 
-.line {
-    display: inline;
-}
 
-.dropbtn {
-    cursor: pointer;
-    border: none;
-}
-
-.dropdown {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 .dropOptions {
     position: absolute;
-    top: 40px;
-    left: 0;
     background-color: rgb(252, 211, 148);
-    padding: 12px 16px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .dropOptions button {
+    display: block;
     margin: 5px;
+    float: none;
 }
 
 .navButton {
