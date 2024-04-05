@@ -14,12 +14,13 @@ nav {
 
 .inlineEl {
     display: inline-block;
+    background-color: blueviolet;
     padding: 0;
 }
 
-#buttonEl {
+/* #buttonEl {
     margin: 0;
-}
+} */
 
 
 
