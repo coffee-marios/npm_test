@@ -18,18 +18,13 @@ nav {
     padding: 0;
 }
 
-/* #buttonEl {
-    margin: 0;
-} */
-
-
-
 
 .dropOptions {
     position: absolute;
     background-color: rgb(252, 211, 148);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    display: none;
 }
 
 .dropOptions button {
@@ -52,7 +47,7 @@ nav {
 }
 
 .hideElement {
-    display: none;
+    display: block;
 }
 
 .navButton:hover {
@@ -65,4 +60,13 @@ nav {
 
 .navButton:active {
     background-color: #3f524b;
+}
+
+#imagesElement {
+    padding: 2rem;
+    text-align: center;
+}
+
+#buttonsImg {
+    margin: 2rem;
 }
