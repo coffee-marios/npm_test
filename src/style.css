@@ -68,5 +68,11 @@ nav {
 }
 
 #buttonsImg {
-    margin: 2rem;
+    margin: 1rem;
+
+}
+
+.changeImg {
+    margin: 0 2rem;
+    font-size: 2rem;
 }

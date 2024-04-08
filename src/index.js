@@ -1,5 +1,47 @@
 import "./style.css";
 
+let imagesChess = ["fen.gif", "e4.gif"];
+let stateImage = "fen.gif";
+let imgBox = document.getElementById("imageBox");
+let lastImage = document.getElementById("lastPicture");
+let nextImage = document.getElementById("nextPicture");
+
+lastImage.addEventListener("click", function () {
+  let imgIndex = imagesChess.indexOf(stateImage);
+  console.log(imgIndex, imagesChess.length - 1);
+  if (imgIndex >= 1) {
+    let lastImageIndex = imgIndex - 1;
+    stateImage = imagesChess[lastImageIndex];
+  }
+  let imageRemove = imgBox.firstElementChild;
+  if (imageRemove !== null && imgIndex >= 1) {
+    imageRemove.remove();
+    const image = document.createElement("img");
+    image.src = "images/" + stateImage;
+    image.width = "250";
+    image.height = "250";
+    imgBox.appendChild(image);
+  }
+});
+
+nextImage.addEventListener("click", function () {
+  let imgIndex = imagesChess.indexOf(stateImage);
+  console.log(imgIndex, imagesChess.length - 1);
+  if (imgIndex < imagesChess.length - 1) {
+    let nextImageIndex = imgIndex + 1;
+    stateImage = imagesChess[nextImageIndex];
+  }
+  let imageRemove = imgBox.firstElementChild;
+  if (imageRemove !== null && imgIndex < imagesChess.length - 1) {
+    imageRemove.remove();
+    const image = document.createElement("img");
+    image.src = "images/" + stateImage;
+    image.width = "250";
+    image.height = "250";
+    imgBox.appendChild(image);
+  }
+});
+
 function toggleElement() {
   let element = document.getElementById("buttonColors");
   element.classList.toggle("hideElement");
