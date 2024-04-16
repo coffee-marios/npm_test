@@ -1,6 +1,15 @@
 import "./style.css";
 
-let imagesChess = ["fen.gif", "e4.gif"];
+let imagesChess = [
+  "fen.gif",
+  "e4.gif",
+  "fen3.gif",
+  "fen4.gif",
+  "fen5.gif",
+  "fen6.gif",
+  "fen7.gif",
+  "fen8.gif",
+];
 let stateImage = "fen.gif";
 let imgBox = document.getElementById("imageBox");
 let lastImage = document.getElementById("lastPicture");
