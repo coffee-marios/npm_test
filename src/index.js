@@ -10,51 +10,60 @@ let imagesChess = [
   "fen7.gif",
   "fen8.gif",
 ];
-let stateImage = "fen.gif";
-let imgBox = document.getElementById("imageBox");
-let lastImage = document.getElementById("lastPicture");
-let nextImage = document.getElementById("nextPicture");
 
-lastImage.addEventListener("click", function () {
-  let imgIndex = imagesChess.indexOf(stateImage);
-  console.log(imgIndex, imagesChess.length - 1);
-  if (imgIndex >= 1) {
-    let lastImageIndex = imgIndex - 1;
-    stateImage = imagesChess[lastImageIndex];
+let stateImage = 0;
+
+const componentSlide = function (arrayImages) {
+  let numberImg = arrayImages.length - 1;
+
+  const slideImg = document.createElement("div");
+  slideImg.setAttribute("id", "imageBox");
+
+  for (let i = 0; i <= numberImg; i++) {
+    const divImg = document.createElement("div");
+    slideImg.appendChild(divImg);
+    const imgChess = document.createElement("img");
+    imgChess.src = "images/" + imagesChess[i];
+    imgChess.width = "250";
+    imgChess.height = "250";
+    divImg.appendChild(imgChess);
+    divImg.style.display = "none";
   }
-  let imageRemove = imgBox.firstElementChild;
-  if (imageRemove !== null && imgIndex >= 1) {
-    imageRemove.remove();
-    const image = document.createElement("img");
-    image.src = "images/" + stateImage;
-    image.width = "250";
-    image.height = "250";
-    imgBox.appendChild(image);
+  slideImg.firstChild.style.display = "block";
+
+  return slideImg;
+};
+
+const parentElement = document.getElementById("imagesElement");
+parentElement.appendChild(componentSlide(imagesChess));
+
+let passedImage = document.getElementById("passedPicture");
+
+let nextImage = document.getElementById("nextPicture");
+//
+//
+
+passedImage.addEventListener("click", function () {
+  let slide = document.getElementById("imageBox");
+
+  if (stateImage > 0) {
+    slide.childNodes[stateImage].style.display = "none";
+
+    stateImage -= 1;
+    slide.childNodes[stateImage].style.display = "block";
   }
 });
 
 nextImage.addEventListener("click", function () {
-  let imgIndex = imagesChess.indexOf(stateImage);
-  console.log(imgIndex, imagesChess.length - 1);
-  if (imgIndex < imagesChess.length - 1) {
-    let nextImageIndex = imgIndex + 1;
-    stateImage = imagesChess[nextImageIndex];
-  }
-  let imageRemove = imgBox.firstElementChild;
-  if (imageRemove !== null && imgIndex < imagesChess.length - 1) {
-    imageRemove.remove();
-    const image = document.createElement("img");
-    image.src = "images/" + stateImage;
-    image.width = "250";
-    image.height = "250";
-    imgBox.appendChild(image);
+  let slide = document.getElementById("imageBox");
+
+  if (stateImage < imagesChess.length - 1) {
+    slide.childNodes[stateImage].style.display = "none";
+
+    stateImage += 1;
+    slide.childNodes[stateImage].style.display = "block";
   }
 });
-
-function toggleElement() {
-  let element = document.getElementById("buttonColors");
-  element.classList.toggle("hideElement");
-}
 
 let topButtons = document.querySelectorAll(".navButton");
 let dropMenus = document.querySelectorAll(".dropOptions");
@@ -79,5 +88,3 @@ topButtons.forEach((topButton) => {
     topButton.style.backgroundColor = "green";
   });
 });
-
-export { toggleElement };
