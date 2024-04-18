@@ -46,11 +46,38 @@ const componentSlide = function (arrayImages) {
 const parentElement = document.getElementById("imagesElement");
 parentElement.appendChild(componentSlide(imagesChess));
 
-let passedImage = document.getElementById("passedPicture");
+const passedImage = document.getElementById("passedPicture");
 
-let nextImage = document.getElementById("nextPicture");
+const nextImage = document.getElementById("nextPicture");
+const autoImage = document.getElementById("autoImg");
 //
 //
+
+let playingVideo = false;
+let intervalId;
+
+function repeatEvent() {
+  nextImage.click();
+}
+
+function stopVideo() {
+  clearInterval(intervalId);
+  playingVideo = false;
+}
+
+const stopButton = document.getElementById("stopImg");
+
+// Event listener to detect other user actions
+stopButton.addEventListener("click", function () {
+  if (playingVideo == true) {
+    stopVideo();
+  }
+});
+
+autoImage.addEventListener("click", function () {
+  playingVideo = true;
+  intervalId = setInterval(repeatEvent, 900);
+});
 
 passedImage.addEventListener("click", function () {
   let slide = document.getElementById("imageBox");
@@ -74,6 +101,12 @@ nextImage.addEventListener("click", function () {
     slide.childNodes[stateImage].style.display = "none";
     dotContainer.childNodes[stateImage].style.backgroundColor = "yellow";
     stateImage += 1;
+    dotContainer.childNodes[stateImage].style.backgroundColor = "green";
+    slide.childNodes[stateImage].style.display = "block";
+  } else if (stateImage == imagesChess.length - 1) {
+    dotContainer.childNodes[stateImage].style.backgroundColor = "yellow";
+    slide.childNodes[stateImage].style.display = "none";
+    stateImage = 0;
     dotContainer.childNodes[stateImage].style.backgroundColor = "green";
     slide.childNodes[stateImage].style.display = "block";
   }
