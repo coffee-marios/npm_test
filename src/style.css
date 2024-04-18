@@ -53,7 +53,7 @@ nav {
 .navButton:hover {
     background-color: #0faa04;
     /* Green */
-    color: rgb(225, 232, 26);
+    color: white;
 }
 
 
@@ -75,4 +75,21 @@ nav {
 .changeImg {
     margin: 0 2rem;
     font-size: 2rem;
+}
+
+#dotContainer {
+    margin-top: 1.2rem;
+}
+
+.dot {
+    margin-right: 0.8rem;
+    height: 16px;
+    width: 16px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#imageBox>div>img {
+    border-radius: 5%;
 }

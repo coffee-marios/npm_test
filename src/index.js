@@ -30,7 +30,16 @@ const componentSlide = function (arrayImages) {
     divImg.style.display = "none";
   }
   slideImg.firstChild.style.display = "block";
+  const dotDiv = document.createElement("div");
+  dotDiv.setAttribute("id", "dotContainer");
+  slideImg.appendChild(dotDiv);
 
+  for (let i = 0; i <= numberImg; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dotDiv.appendChild(dot);
+  }
+  dotDiv.firstChild.style.backgroundColor = "green";
   return slideImg;
 };
 
@@ -45,22 +54,27 @@ let nextImage = document.getElementById("nextPicture");
 
 passedImage.addEventListener("click", function () {
   let slide = document.getElementById("imageBox");
+  let dotContainer = document.getElementById("dotContainer");
 
   if (stateImage > 0) {
     slide.childNodes[stateImage].style.display = "none";
+    dotContainer.childNodes[stateImage].style.backgroundColor = "yellow";
 
     stateImage -= 1;
     slide.childNodes[stateImage].style.display = "block";
+    dotContainer.childNodes[stateImage].style.backgroundColor = "green";
   }
 });
 
 nextImage.addEventListener("click", function () {
   let slide = document.getElementById("imageBox");
+  let dotContainer = document.getElementById("dotContainer");
 
   if (stateImage < imagesChess.length - 1) {
     slide.childNodes[stateImage].style.display = "none";
-
+    dotContainer.childNodes[stateImage].style.backgroundColor = "yellow";
     stateImage += 1;
+    dotContainer.childNodes[stateImage].style.backgroundColor = "green";
     slide.childNodes[stateImage].style.display = "block";
   }
 });
@@ -86,5 +100,6 @@ topButtons.forEach((topButton) => {
     }
     mapNav.get(topButton).classList.toggle("hideElement");
     topButton.style.backgroundColor = "green";
+    topButton.style.color = "white";
   });
 });
