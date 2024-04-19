@@ -30,7 +30,7 @@ nav {
 .dropOptions button {
     display: block;
     margin: 5px;
-    float: none;
+    /* float: none; */
 }
 
 .navButton {
@@ -47,7 +47,7 @@ nav {
 }
 
 .hideElement {
-    display: none;
+    display: block;
 }
 
 .navButton:hover {

@@ -129,7 +129,11 @@ console.log(dropMenus[0]);
 topButtons.forEach((topButton) => {
   topButton.addEventListener("click", function () {
     for (let i = 0; i < topButtons.length; i++) {
-      topButtons[i].style.backgroundColor = "rgb(226, 188, 53)";
+      let eachButton = topButtons[i];
+      if (topButton !== eachButton) {
+        eachButton.style.backgroundColor = "rgb(226, 188, 53)";
+        mapNav.get(eachButton).classList.remove("hideElement");
+      }
     }
     mapNav.get(topButton).classList.toggle("hideElement");
     topButton.style.backgroundColor = "green";
