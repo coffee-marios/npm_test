@@ -30,7 +30,7 @@ nav {
 .dropOptions button {
     display: block;
     margin: 5px;
-    /* float: none; */
+
 }
 
 .navButton {
@@ -46,21 +46,27 @@ nav {
     color: #551A8B;
 }
 
-.hideElement {
-    display: block;
-}
+
 
 .navButton:hover {
     background-color: #0faa04;
-    /* Green */
     color: white;
 }
 
 
-
-.navButton:active {
-    background-color: #3f524b;
+.buttonClicked {
+    background-color: #e40c9c !important;
+    color: white;
 }
+
+.hideElement {
+    display: block;
+}
+
+
+
+
+
 
 #imagesElement {
     padding: 2rem;
