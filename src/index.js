@@ -131,15 +131,11 @@ topButtons.forEach((topButton) => {
     for (let i = 0; i < topButtons.length; i++) {
       let eachButton = topButtons[i];
       if (topButton !== eachButton) {
-        //eachButton.style.backgroundColor = "rgb(226, 188, 53)";
         mapNav.get(eachButton).classList.remove("hideElement");
         eachButton.classList.remove("buttonClicked");
       }
     }
     mapNav.get(topButton).classList.toggle("hideElement");
     topButton.classList.toggle("buttonClicked");
-
-    //topButton.style.backgroundColor = "green";
-    // topButton.style.color = "white";
   });
 });
