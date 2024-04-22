@@ -120,8 +120,6 @@ for (let i = 0; i < topButtons.length; i++) {
   mapNav.set(topButtons[i], dropMenus[i]);
 }
 
-console.log(dropMenus[0]);
-
 // Every time we click a button:
 // its color changes;
 // a dropdown menu appears or disappears
@@ -139,3 +137,28 @@ topButtons.forEach((topButton) => {
     topButton.classList.toggle("buttonClicked");
   });
 });
+
+function setBackground(buttonColorId, classColorBody, colorDrop) {
+  const buttonColor = document.getElementById(buttonColorId);
+  buttonColor.addEventListener("click", function () {
+    const classElement = [...document.body.classList];
+    if (classElement.length > 0) {
+      classElement.forEach((myClass) => {
+        document.body.classList.remove(myClass);
+      });
+    }
+    document.body.classList.add(classColorBody);
+    dropMenus.forEach((element) => {
+      element.style.background = colorDrop;
+    });
+  });
+}
+
+setBackground("dark-background", "myDark-background", "rgb(3,3,3)");
+setBackground("green-background", "myGreen-background", "rgb(0,244,0)");
+setBackground("blue-background", "myBlue-background", "rgb(0,0,200)");
+setBackground(
+  "original-background",
+  "myOriginal-background",
+  "rgb(252, 211, 148)"
+);

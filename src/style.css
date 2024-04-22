@@ -1,7 +1,25 @@
 :root {
     --main-bg-color: rgb(209, 181, 181);
+    --dark-bg-color: rgba(0, 0, 0, 0.8);
+    --green-bg-color: rgba(0, 128, 0, 0.837);
+    --blue-bg-color: rgba(0, 0, 255, 0.841);
 }
 
+.myDark-background {
+    background-color: var(--dark-bg-color);
+}
+
+.myGreen-background {
+    background-color: var(--green-bg-color);
+}
+
+.myBlue-background {
+    background-color: var(--blue-bg-color);
+}
+
+.myOriginal-background {
+    background-color: var(--main-bg-color);
+}
 
 body {
     background-color: var(--main-bg-color);
@@ -14,6 +32,7 @@ nav {
     background-color: rgba(133, 248, 250, 0.795);
     border: #00060400 2px solid;
     text-align: center;
+    padding: 1rem;
 
 }
 
@@ -29,7 +48,7 @@ nav {
 .dropOptions {
     position: absolute;
     background-color: rgb(252, 211, 148);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.33);
     z-index: 1;
     display: none;
 }
