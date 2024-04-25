@@ -29,7 +29,7 @@ body {
 }
 
 nav {
-    background-color: rgba(133, 248, 250, 0.795);
+    background-color: rgba(76, 188, 190, 0.112);
     border: #00060400 2px solid;
     text-align: center;
     padding: 1rem;
@@ -40,7 +40,7 @@ nav {
 
 .inlineEl {
     display: inline-block;
-    background-color: blueviolet;
+    background-color: rgba(33, 33, 168, 0.41);
     padding: 0;
 }
 
@@ -63,13 +63,13 @@ nav {
     text-decoration: none;
 
     padding: 10px 30px;
-    background-color: rgb(226, 188, 53);
+    background-color: rgb(187, 152, 24);
     border: none;
     display: inline-block;
     font-size: 16px;
     margin: 14px 2px;
     font-family: 'Times New Roman', Times, serif;
-    color: #551A8B;
+    color: whitesmoke;
 }
 
 
@@ -81,7 +81,7 @@ nav {
 
 
 .buttonClicked {
-    background-color: #e40c9c !important;
+    background-color: #0ce410be !important;
     color: white;
 }
 
@@ -111,7 +111,7 @@ nav {
 }
 
 #dotContainer {
-    margin-top: 1.2rem;
+    margin: 0.7rem 0;
 }
 
 .dot {
