@@ -125,7 +125,8 @@ for (let i = 0; i < topButtons.length; i++) {
 // a dropdown menu appears or disappears
 
 topButtons.forEach((topButton) => {
-  topButton.addEventListener("click", function () {
+  topButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Stop event propagation
     for (let i = 0; i < topButtons.length; i++) {
       let eachButton = topButtons[i];
       if (topButton !== eachButton) {
@@ -162,3 +163,11 @@ setBackground(
   "myOriginal-background",
   "rgb(252, 211, 148)"
 );
+
+const myBody = document.body;
+
+myBody.addEventListener("click", () => {
+  dropMenus.forEach((menu) => {
+    menu.classList.remove("hideElement");
+  });
+});
